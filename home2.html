@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SMN Group | Turning Dreams Into Achievements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Color Theme (Pink) ===== */
+:root{
+  --primary:#e91e63;     /* Pink */
+  --secondary:#f8bbd0;   /* Light Pink */
+  --dark:#880e4f;        /* Dark Pink */
+  --light:#fde4ec;       /* Very Light Pink */
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#333;
+  line-height:1.7;
+}
+
+/* ===== Animations ===== */
+.reveal{opacity:0;transform:translateY(40px);transition:1s;}
+.reveal.active{opacity:1;transform:translateY(0);}
+.slide-left{opacity:0;transform:translateX(-40px);transition:1s;}
+.slide-left.active{opacity:1;transform:translateX(0);}
+.slide-right{opacity:0;transform:translateX(40px);transition:1s;}
+.slide-right.active{opacity:1;transform:translateX(0);}
+.zoom{opacity:0;transform:scale(.9);transition:1s;}
+.zoom.active{opacity:1;transform:scale(1);}
+
+/* ===== Header ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  z-index:1000;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo-box span{
+  font-size:22px;
+  font-weight:700;
+  color:var(--primary);
+}
+
+.menu a{
+  margin-left:22px;
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  position:relative;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--primary);
+  transition:.3s;
+}
+
+.menu a:hover::after{width:100%;}
+
+/* ===== Button ===== */
+.btn{
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:10px 24px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+
+/* ===== Hero ===== */
+.hero{
+  margin-top:90px;
+  padding:90px 20px;
+  background:linear-gradient(135deg,var(--light),#fff);
+}
+
+.hero-box{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h2{
+  font-size:46px;
+  color:var(--dark);
+  text-align:center;
+}
+
+.hero p{
+  text-align:justify;
+  margin:20px 0;
+}
+
+.hero img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(233,30,99,.25);
+  transition:.5s;
+}
+
+.hero img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== Section ===== */
+section{padding:90px 20px;}
+
+.title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.title h2{
+  font-size:38px;
+  color:var(--dark);
+}
+
+/* ===== Cards ===== */
+.cards{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 45px rgba(0,0,0,.15);
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:var(--primary);
+}
+
+/* ===== Newsletter ===== */
+.newsletter{
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  text-align:center;
+}
+
+.newsletter input{
+  width:240px;
+  padding:12px;
+  border-radius:6px;
+  border:none;
+  margin-right:10px;
+}
+
+/* ===== Contact ===== */
+.contact{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* ===== Footer ===== */
+footer{
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+}
+
+footer p{margin-bottom:8px;}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .hero-box,.contact{grid-template-columns:1fr;}
+  .menu{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo-box"><span>SMN GROUP</span></div>
+    <div class="menu">
+      <a href="1.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Courses</a>
+      <a href="#">Free Tests</a>
+      <a href="#" class="btn">Login</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-box">
+    <div class="slide-left reveal">
+      <h2>Turning Dreams Into Achievements</h2>
+      <p>
+        <strong>SMN GROUP</strong> is committed to transforming aspirants into achievers through a structured online learning ecosystem. We provide complete preparation for UPSC, BPSC, UPPSC, MPPSC, JPSC and other State PSCs, along with CBSE, Bihar, UP and other Board exams. Our courses also cover national entrance and eligibility tests like CLAT, CUET, NET, CTET, STET, Banking exams (IBPS, SBI, RBI), Central/State Government recruitment tests, and major Engineering and Medical entrance examinations.
+
+With premium study material, chapter-wise notes, focused practice sets, structured test series and full mock tests that reflect real exam patterns, SMN GROUP ensures strong conceptual clarity and consistent performance improvement. Backed by a 95%+ success probability and limited-student batches, we offer personalized guidance, timely doubt support, and disciplined preparation. Our mission is to provide quality education at a nominal price, enabling students from all backgrounds to achieve success—often in their first attempt.
+      </p>
+      <a href="#" class="btn">Explore Courses</a>
+    </div>
+
+    <img class="slide-right reveal"
+      src="SMN_IMG.png">
+  </div>
+</section>
+
+<section>
+  <div class="title reveal">
+    <h2>OUR TEAM</h2>
+    <p>Brilliant Minds at Work</p>
+  </div>
+
+  <div class="cards">
+    <div class="card zoom reveal">
+      <img src="https://cdn-diy-public.classplus.co/prod/NKVPHOTO1_1762627387410.png">
+      <h3>Dr. N. K. Verma</h3>
+      <p>10+ Years Experience</p>
+    </div>
+
+    <div class="card zoom reveal">
+      <img src="https://cdn-diy-public.classplus.co/prod/Screenshot20251109at12_1762627418659.png">
+      <h3>Niloo Kumari</h3>
+      <p>10+ Years Experience</p>
+    </div>
+
+    <div class="card zoom reveal">
+      <img src="https://cdn-diy-public.classplus.co/prod/Screenshot20251109at12_1762627426835.png">
+      <h3>Cmdr. Vinay Kumar</h3>
+      <p>10+ Years Experience</p>
+    </div>
+
+    <div class="card zoom reveal">
+      <img src="https://cdn-diy-public.classplus.co/prod/Principal1_1762627484377.jpeg">
+      <h3>Dr. Babita Kumari</h3>
+      <p>25+ Years Experience</p>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div class="title reveal">
+    <h2>Smart Learning • Superior Results</h2>
+    <p>Technology-driven education with mentorship</p>
+  </div>
+  <input type="email" placeholder="Enter Email">
+  <a href="#" class="btn">Subscribe</a>
+</section>
+
+<section>
+  <div class="title reveal">
+    <h2>Contact Us</h2>
+    <p>Get expert guidance today</p>
+  </div>
+
+  <div class="contact">
+    <div class="card slide-left reveal">
+      <h3>Our Office</h3>
+      <p>
+        2006-2ND FLOOR, GRAND PLAZA<br>
+        P.O-G.P.O, P.S-KOTWALI<br>
+        FRASER ROAD, NEAR DAKBUNGLOW CHAURAHA<br>
+        PATNA, BIHAR – 800001
+      </p>
+      <p>📞 +91-9117030259</p>
+      <p>📧 info@smngroup.co.in</p>
+    </div>
+
+    <div class="card slide-right reveal">
+      <h3>Send Message</h3>
+      <input placeholder="Name">
+      <input placeholder="Phone">
+      <input placeholder="Email">
+      <textarea placeholder="Message"></textarea>
+      <a href="#" class="btn">Contact Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    2006-2ND FLOOR, GRAND PLAZA, P.O-G.P.O, P.S-KOTWALI<br>
+    FRASER ROAD, NEAR DAKBUNGLOW CHAURAHA, PATNA, BIHAR – 800001
+  </p>
+  <p>📞 +91-9117030259 | 📧 info@smngroup.co.in</p>
+  <p>© 2025 All Rights Reserved</p>
+  <p>Powered by Classplus</p>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+window.addEventListener('scroll', () => {
+  reveals.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
