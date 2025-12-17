@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | SMN Group</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#38bdf8;      /* Sky Blue */
+  --secondary:#86efac;    /* Light Green */
+  --dark:#0f172a;
+  --light:#ecfeff;
+  --white:#ffffff;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#333;
+  line-height:1.7;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  z-index:1000;
+}
+
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:22px;
+  font-weight:700;
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.menu a{
+  margin-left:22px;
+  text-decoration:none;
+  color:#444;
+  font-weight:500;
+  position:relative;
+  transition:.3s;
+}
+
+.menu a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:3px;
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  transition:.3s;
+}
+
+.menu a:hover::after{
+  width:100%;
+}
+
+/* ===== BUTTON ===== */
+.btn{
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:10px 24px;
+  border-radius:10px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(56,189,248,.45);
+}
+
+/* ===== HERO ===== */
+.hero{
+  margin-top:90px;
+  padding:90px 20px;
+  background:linear-gradient(135deg,var(--light),#fff);
+}
+
+.hero-box{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:46px;
+  color:var(--dark);
+}
+
+.hero p{
+  margin:20px 0;
+  text-align:justify;
+}
+
+.hero img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(56,189,248,.25);
+  transition:.5s;
+}
+
+.hero img:hover{
+  transform:scale(1.05);
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:90px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.title h2{
+  font-size:38px;
+  color:var(--dark);
+}
+
+/* ===== CARDS ===== */
+.cards{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 25px 60px rgba(56,189,248,.25);
+}
+
+.card h3{
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+/* ===== STATS ===== */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:30px;
+}
+
+.stat{
+  background:#fff;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.stat:hover{
+  transform:translateY(-8px);
+}
+
+.stat h3{
+  color:var(--primary);
+  font-size:28px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:linear-gradient(135deg,var(--dark),#000);
+  color:#fff;
+  text-align:center;
+  padding:40px 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .hero-box{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .menu{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="nav">
+    <div class="logo">SMN GROUP</div>
+    <div class="menu">
+      <a href="home4.html">Home</a>
+      <a href="about_home4.html">About us</a>
+      <a href="#">Courses</a>
+      <a href="#">Free Tests</a>
+      <a href="#" class="btn">Login</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-box">
+    <div>
+      <h1>About SMN Group</h1>
+      <p>
+        SMN Group is a premier e-learning platform dedicated to delivering
+        high-quality, affordable and result-oriented education. Under the
+        guidance of experienced educators, we prepare students for competitive
+        examinations and academic success.
+      </p>
+      <p>
+        Dr. N.K. Verma, Founder of SMN Online Learning Platform, brings over 25
+        years of academic and leadership experience to deliver quality,
+        accessible, and result-oriented education.
+      </p>
+      <a href="contact.html" class="btn">Connect With Us</a>
+    </div>
+    <img src="SMN_ABOUT4.png" alt="About SMN Group">
+  </div>
+</section>
+
+<!-- WHY SMN -->
+<section>
+  <div class="title">
+    <h2>Why Choose SMN Group?</h2>
+    <p>Education that transforms potential into performance</p>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>To provide affordable and quality education for every learner.</p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>To build a future driven by knowledge, discipline and innovation.</p>
+    </div>
+
+    <div class="card">
+      <h3>Our Values</h3>
+      <p>Integrity, dedication and student-first approach.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUTE -->
+<section style="background:var(--light);">
+  <div class="hero-box">
+    <div>
+      <h2>Our Institute</h2>
+      <p>
+        With years of experience in online education, SMN Group has guided
+        thousands of students toward success through structured courses,
+        expert mentorship and technology-driven learning.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>32+</h3>
+          <p>Courses</p>
+        </div>
+        <div class="stat">
+          <h3>5000+</h3>
+          <p>Students</p>
+        </div>
+        <div class="stat">
+          <h3>5+</h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+    </div>
+
+    <img src="https://diy-assets.classplus.co/_next/image?url=https://cdn-diy-public.classplus.co/prod/SMNLOGO1_1762629885726.jpg&w=3840&q=75" alt="Institute">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    2006-2nd Floor, Grand Plaza, Fraser Road, Patna, Bihar – 800001<br>
+    📞 +91-9117030259 | 📧 info@smngroup.co.in
+  </p>
+  <p>© 2025 SMN Group • All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
